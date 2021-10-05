@@ -1,0 +1,43 @@
+Bug 1
+-----
+Test that demonstrates problem:
+    getTimesheetsByEmployeeId_returns_list_of_all_timesheets_for_employee
+Expected output:
+    getTimesheetsByEmployeeId(1) returns a list of 2 timesheets
+Actual output:
+    getTimesheetsByEmployeeId(1) was returning a list of 1 timesheet
+How did you fix this bug?
+    Replaced if(results.next()) with while(results.next()) in getTimesheetsByEmployeeId so all results are processed.
+
+Bug 2
+-----
+Test that demonstrates problem:
+    getTimesheetsByProjectId_returns_list_of_all_timesheets_for_project
+Expected output:
+    getTimesheetsByProjectId(1) returns a list of 3 timesheets
+Actual output:
+    getTimesheetsByProjectId(1) was returning a list of 2 timesheets
+How did you fix this bug?
+    Modified the WHERE clause in the SQL used by getTimesheetsByProjectId to filter on project_id rather than employee_id.
+
+Bug 3
+-----
+Test that demonstrates problem:
+    updated_timesheet_has_expected_values_when_retrieved
+Expected output:
+    getTimesheet(1) returns a timesheet with billable set to false (after updating that value with updateTimesheet)
+Actual output:
+    getTimesheet(1) was returning a timesheet with billable set to true
+How did you fix this bug?
+    Added billable to the list of fields being updated by the SQL in updateTimesheet.
+
+Bug 4
+-----
+Test that demonstrates problem:
+    getBillableHours_returns_correct_total
+Expected output:
+    getBillableHours(2, 2) returns 0
+Actual output:
+    getBillableHours(2, 2) was returning 2.0 (the total of all timesheets, not just the billable ones)
+How did you fix this bug?
+    Added billable = true to the WHERE clause of the SQL used by getBillableHours.

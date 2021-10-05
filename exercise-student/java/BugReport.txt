@@ -1,0 +1,45 @@
+Bug 1
+-----
+Test that demonstrates problem: getTimesheetsByEmployeeId_returns_list_of_all_timesheets_for_employee
+
+Expected output: 2
+
+Actual output: 1
+
+How did you fix this bug? The method has an 'if' statement. I replaced it with
+                            a 'while' loop to get the list.
+
+
+Bug 2
+-----
+Test that demonstrates problem: getTimesheetsByProjectId_returns_list_of_all_timesheets_for_project
+
+Expected output:2
+
+Actual output:1
+
+How did you fix this bug? the where clause was having the employee_id.
+                            I replaced the while clause with the project_id.
+
+
+Bug 3
+-----
+Test that demonstrates problem: getBillableHours_returns_correct_total
+
+Expected output:2
+
+Actual output:1
+
+How did you fix this bug? I had to put "+=" to add to the number of billableHours.
+
+
+Bug 4
+-----
+Test that demonstrates problem: updated_timesheet_has_expected_values_when_retrieved
+
+Expected output:2
+
+Actual output:1
+
+How did you fix this bug? I just put the semi-colon after the update statement.
+
